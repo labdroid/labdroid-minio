@@ -14,9 +14,6 @@ RUN curl -o minio https://dl.minio.io/server/minio/release/linux-amd64/minio && 
 
 USER minio
 
-ENV MINIO_ACCESS_KEY="myaccesskey"
-ENV MINIO_SECRET_KEY="mysecret"
-
 VOLUME /opt/minio/config
 VOLUME /opt/minio/data
 
