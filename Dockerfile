@@ -1,6 +1,6 @@
 FROM centos
 
-RUN yum -y install curl jq && yum clean all
+RUN yum install epel-release -y && yum install jq -y && yum clean all
 
 RUN useradd -d /opt/minio -g root minio
 
