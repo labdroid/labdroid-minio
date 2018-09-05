@@ -1,5 +1,7 @@
 FROM centos
 
+RUN yum -y install curl jq && yum clean all
+
 RUN useradd -d /opt/minio -g root minio
 
 WORKDIR /opt/minio
