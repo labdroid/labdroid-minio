@@ -9,8 +9,8 @@ fi
 
 SECRETS=`curl -H "X-Vault-Token: $VAULT_MINIO_READ_ACCESS_TOKEN" -X GET http://vault:8200/v1/secret/minio`
 
-export MINIO_ACCESS_KEY=`echo $SECRETS | jq .data.MINIO_ACCESS_KEY`
-export MINIO_SECRET_KEY=`echo $SECRETS | jq .data.MINIO_SECRET_KEY`
+export MINIO_ACCESS_KEY=`echo $SECRETS | jq -r .data.MINIO_ACCESS_KEY`
+export MINIO_SECRET_KEY=`echo $SECRETS | jq -r .data.MINIO_SECRET_KEY`
 
 HOME="`pwd`"
 $HOME/minio server --config-dir=$HOME/config $@ $HOME/data
