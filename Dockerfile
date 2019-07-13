@@ -1,6 +1,10 @@
-FROM registry.access.redhat.com/ubi8
+FROM registry.access.redhat.com/ubi7
+LABEL maintainer="Anthony Green <anthony@atgreen.org>"
 
-RUN yum install epel-release -y && yum install jq -y && yum clean all
+# Install EPEL
+RUN rpm -ivh https://download-ib01.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+RUN yum install jq -y && yum clean all
 
 RUN useradd -d /opt/minio -g root minio
 
