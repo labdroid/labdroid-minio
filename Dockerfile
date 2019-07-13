@@ -1,4 +1,4 @@
-FROM centos
+FROM registry.access.redhat.com/ubi8
 
 RUN yum install epel-release -y && yum install jq -y && yum clean all
 
