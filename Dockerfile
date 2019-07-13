@@ -1,4 +1,4 @@
-FROM centos7
+FROM registry.access.redhat.com/ubi7
 LABEL maintainer="Anthony Green <anthony@atgreen.org>"
 
 # Install EPEL
